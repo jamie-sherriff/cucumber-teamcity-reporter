@@ -1,0 +1,37 @@
+{
+  "name": "cucumber-teamcity-reporter",
+  "version": "0.0.1",
+  "description": "Teamcity test reporter for cucumber",
+  "main": "./lib/reporter",
+  "scripts": {
+    "lint": "eslint lib/*.js test/**/*.js --fix",
+    "test": "ava test/functional/*.*js  test/unit/*.*js",
+    "test-update": "ava test/functional/*.*js  test/unit/*.*js --update-snapshots",
+    "test-example": "cucumberjs test/data/example.feature -r test/data/step_definitions/example_steps.js --format lib/reporter"
+  },
+  "author": "Jamie Sherriff",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "eslint-plugin-babel": "^4.1.2"
+  },
+  "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "cucumber": "^3.0.6",
+    "debug": "^3.1.0",
+    "eslint": "^4.6.1",
+    "lodash": "^4.17.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamie-sherriff/cucumber-teamcity-reporter"
+  },
+  "ava": {
+    "timeout": "30s",
+    "files": [
+      "test/**/*.js"
+    ],
+    "failWithoutAssertions": true,
+    "verbose": true
+  }
+}
